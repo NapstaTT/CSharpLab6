@@ -1,0 +1,264 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Lab6</name>
+    </assembly>
+    <members>
+        <member name="T:Lab6.Cats.Cat">
+            <summary>
+            Представляет кота, который умеет мяукать.
+            </summary>
+        </member>
+        <member name="P:Lab6.Cats.Cat.Name">
+            <summary>
+            Имя кота.
+            </summary>
+        </member>
+        <member name="M:Lab6.Cats.Cat.#ctor(System.String)">
+            <summary>
+            Создаёт нового кота.
+            </summary>
+            <param name="name">Имя кота.</param>
+            <exception cref="T:System.ArgumentException">Выбрасывается, если имя пустое.</exception>
+        </member>
+        <member name="M:Lab6.Cats.Cat.Meow">
+            <summary>
+            Кот мяукает один раз.
+            </summary>
+        </member>
+        <member name="M:Lab6.Cats.Cat.Meow(System.Int32)">
+            <summary>
+            Кот мяукает несколько раз.
+            </summary>
+            <param name="n">Количество мяуканий.</param>
+            <exception cref="T:System.ArgumentException">Если n ≤ 0.</exception>
+        </member>
+        <member name="M:Lab6.Cats.Cat.ToString">
+            <summary>
+            Возвращает строковое представление кота.
+            </summary>
+        </member>
+        <member name="T:Lab6.Cats.CatMeowCounter">
+            <summary>
+            Декоратор для подсчёта количества вызовов Meow() у IMeowable.
+            </summary>
+        </member>
+        <member name="P:Lab6.Cats.CatMeowCounter.Counter">
+            <summary>
+            Количество зарегистрированных мяуканий.
+            </summary>
+        </member>
+        <member name="M:Lab6.Cats.CatMeowCounter.#ctor(Lab6.Cats.IMeowable)">
+            <summary>
+            Создаёт декоратор вокруг <paramref name="inner"/>.
+            </summary>
+            <param name="inner">Объект, чьи мяуканья нужно считать.</param>
+        </member>
+        <member name="M:Lab6.Cats.CatMeowCounter.Meow">
+            <summary>
+            Вызывает Meow() у вложенного объекта и увеличивает счётчик.
+            </summary>
+        </member>
+        <member name="T:Lab6.Cats.Funs">
+            <summary>
+            Вспомогательные методы для работы с IMeowable-объектами.
+            </summary>
+        </member>
+        <member name="M:Lab6.Cats.Funs.MeowAll(System.Collections.Generic.IEnumerable{Lab6.Cats.IMeowable})">
+            <summary>
+            Заставляет все объекты коллекции мяукнуть.
+            </summary>
+            <param name="meowables">Коллекция мяукающих объектов.</param>
+        </member>
+        <member name="M:Lab6.Cats.Funs.MeowsCare(Lab6.Cats.IMeowable)">
+            <summary>
+            Вызывает Meow() 5 раз у переданного объекта.
+            </summary>
+            <param name="meowable">Объект, который будет заботиться.</param>
+        </member>
+        <member name="T:Lab6.Cats.IMeowable">
+            <summary>
+            Интерфейс для объектов, способных мяукать.
+            </summary>
+        </member>
+        <member name="M:Lab6.Cats.IMeowable.Meow">
+            <summary>
+            Издаёт звук мяуканья.
+            </summary>
+        </member>
+        <member name="T:Lab6.Cats.RobotCat">
+            <summary>
+            Роботизированный кот для демонстрации интерфейса IMeowable.
+            </summary>
+        </member>
+        <member name="P:Lab6.Cats.RobotCat.Name">
+            <summary>
+            Имя робота-кота.
+            </summary>
+        </member>
+        <member name="M:Lab6.Cats.RobotCat.#ctor(System.String)">
+            <summary>
+            Создаёт нового робота-кота.
+            </summary>
+            <param name="name">Имя робота.</param>
+        </member>
+        <member name="M:Lab6.Cats.RobotCat.Meow">
+            <summary>
+            Выполняет мяуканье робота-кота.
+            </summary>
+        </member>
+        <member name="M:Lab6.Cats.RobotCat.ToString">
+            <summary>
+            Строковое представление робота-кота.
+            </summary>
+        </member>
+        <member name="T:Lab6.Fractions.CachedFraction">
+            <summary>
+            Дробь с кэшированием вещественного значения.
+            </summary>
+        </member>
+        <member name="M:Lab6.Fractions.CachedFraction.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Создаёт кэшированную дробь.
+            </summary>
+        </member>
+        <member name="P:Lab6.Fractions.CachedFraction.Numerator">
+            <summary>
+            При изменении числителя сбрасываем кэш.
+            </summary>
+        </member>
+        <member name="P:Lab6.Fractions.CachedFraction.Denominator">
+            <summary>
+            При изменении знаменателя сбрасываем кэш.
+            </summary>
+        </member>
+        <member name="M:Lab6.Fractions.CachedFraction.GetRealValue">
+            <summary>
+            Возвращает вещественное значение с кэшированием.
+            </summary>
+        </member>
+        <member name="T:Lab6.Fractions.Fraction">
+            <summary>
+            Класс, представляющий дробь с целыми числителем и знаменателем.
+            </summary>
+        </member>
+        <member name="M:Lab6.Fractions.Fraction.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Создаёт дробь с заданными числителем и знаменателем.
+            </summary>
+            <param name="numerator">Числитель.</param>
+            <param name="denominator">Знаменатель (не 0).</param>
+            <exception cref="T:System.ArgumentException">Если denominator == 0.</exception>
+        </member>
+        <member name="P:Lab6.Fractions.Fraction.Numerator">
+            <summary>
+            Числитель дроби.
+            </summary>
+        </member>
+        <member name="P:Lab6.Fractions.Fraction.Denominator">
+            <summary>
+            Знаменатель дроби.
+            </summary>
+        </member>
+        <member name="M:Lab6.Fractions.Fraction.GetRealValue">
+            <summary>
+            Возвращает вещественное значение дроби (числитель / знаменатель).
+            </summary>
+        </member>
+        <member name="M:Lab6.Fractions.Fraction.op_Addition(Lab6.Fractions.Fraction,Lab6.Fractions.Fraction)">
+            <summary>
+            Сложение двух дробей.
+            </summary>
+        </member>
+        <member name="M:Lab6.Fractions.Fraction.op_Subtraction(Lab6.Fractions.Fraction,Lab6.Fractions.Fraction)">
+            <summary>
+            Вычитание двух дробей.
+            </summary>
+        </member>
+        <member name="M:Lab6.Fractions.Fraction.op_Multiply(Lab6.Fractions.Fraction,Lab6.Fractions.Fraction)">
+            <summary>
+            Умножение двух дробей.
+            </summary>
+        </member>
+        <member name="M:Lab6.Fractions.Fraction.op_Division(Lab6.Fractions.Fraction,Lab6.Fractions.Fraction)">
+            <summary>
+            Деление двух дробей.
+            </summary>
+            <exception cref="T:System.DivideByZeroException">Если делитель равен нулю.</exception>
+        </member>
+        <member name="M:Lab6.Fractions.Fraction.Equals(System.Object)">
+            <summary>
+            Сравнение дробей по полям числитель/знаменатель.
+            </summary>
+        </member>
+        <member name="M:Lab6.Fractions.Fraction.GetHashCode">
+            <summary>
+            Хэш-код дроби, основанный на числителе и знаменателе.
+            </summary>
+        </member>
+        <member name="M:Lab6.Fractions.Fraction.Clone">
+            <summary>
+            Создаёт поверхностную копию дроби.
+            </summary>
+        </member>
+        <member name="M:Lab6.Fractions.Fraction.ToString">
+            <summary>
+            Возвращает строковое представление дроби в формате "числитель/знаменатель".
+            </summary>
+        </member>
+        <member name="T:Lab6.Fractions.IFraction">
+            <summary>
+            Интерфейс для дробей.
+            </summary>
+        </member>
+        <member name="P:Lab6.Fractions.IFraction.Numerator">
+            <summary>
+            Числитель дроби.
+            </summary>
+        </member>
+        <member name="P:Lab6.Fractions.IFraction.Denominator">
+            <summary>
+            Знаменатель дроби (не может быть равен 0).
+            </summary>
+        </member>
+        <member name="M:Lab6.Fractions.IFraction.GetRealValue">
+            <summary>
+            Возвращает вещественное значение дроби.
+            </summary>
+        </member>
+        <member name="T:Lab6.Program">
+            <summary>
+            Демонстрация работы лабораторной работы №6.
+            </summary>
+        </member>
+        <member name="M:Lab6.Program.Main(System.String[])">
+            <summary>
+            Точка входа. Делает демонстрацию работы котов и дробей.
+            </summary>
+        </member>
+        <member name="T:Lab6.Utils.Guard">
+            <summary>
+            Вспомогательные проверки входных данных.
+            </summary>
+        </member>
+        <member name="M:Lab6.Utils.Guard.ArgumentNotNull(System.Object,System.String)">
+            <summary>
+            Проверяет, что значение не равно null.
+            </summary>
+            <param name="value">Проверяемое значение.</param>
+            <param name="paramName">Имя параметра.</param>
+        </member>
+        <member name="M:Lab6.Utils.Guard.ArgumentNotNullOrWhiteSpace(System.String,System.String)">
+            <summary>
+            Проверяет, что строка не пустая и не только пробелы.
+            </summary>
+            <param name="value">Проверяемая строка.</param>
+            <param name="param namename">Имя параметра.</param>
+        </member>
+        <member name="M:Lab6.Utils.Guard.ArgumentInRange(System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            Проверяет, что значение находится в диапазоне [min, max].
+            </summary>
+        </member>
+    </members>
+</doc>
